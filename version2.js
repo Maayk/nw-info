@@ -8,9 +8,16 @@ let notificationMinutes = 0;
 let nextNightTime = null;
 
 async function getCurrentTimeInSaoPaulo() {
-  const response = await fetch('http://worldtimeapi.org/api/timezone/America/Sao_Paulo');
-  const data = await response.json();
-  return new Date(data.datetime); // Retorna a hora oficial de São Paulo
+  try {
+    const response = await fetch('https://worldtimeapi.org/api/timezone/America/Sao_Paulo');
+    if (!response.ok) throw new Error('Erro ao buscar a hora');
+    const data = await response.json();
+    return new Date(data.datetime); // Retorna a hora oficial de São Paulo
+  } catch (error) {
+    console.error('Erro ao obter a hora de São Paulo:', error);
+    alert('Não foi possível obter a hora de São Paulo. Por favor, tente novamente mais tarde.');
+    return new Date(); // Retorna a hora local como fallback
+  }
 }
 
 async function getNextNightTime() {
