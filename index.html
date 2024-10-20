@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New World - Próximo Night Time</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .light-mode {
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .dark-mode {
+      background-color: #333;
+      color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      text-align: center;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    .countdown {
+      font-size: 32px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    .mode-toggle {
+      margin: 20px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .light-btn {
+      background-color: #333;
+      color: #f4f4f4;
+    }
+
+    .dark-btn {
+      background-color: #f4f4f4;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Próximo Night Time</h1>
+    <div class="countdown" id="countdown">Carregando...</div>
+    <div class="mode-toggle">
+      <button id="toggleMode" class="light-btn">Ativar Modo Escuro</button>
+    </div>
+  </div>
+
+  <script>
+    const nightTimes = [
+      "01:11", "02:41", "04:11", "05:41", "07:11", "08:41", 
+      "10:11", "11:41", "13:11", "14:41", "16:11", "17:41", 
+      "19:11", "20:41", "22:11", "23:41"
+    ];
+
+    function getNextNightTime() {
+      const now = new Date();
+      for (let time of nightTimes) {
+        const [hours, minutes] = time.split(':');
+        const nextTime = new Date();
+        nextTime.setHours(hours, minutes, 0, 0);
+        
+        if (nextTime > now) {
+          return nextTime;
+        }
+      }
+      // Se já passou de 23:41, volta para o primeiro horário do próximo dia
+      const firstTime = new Date();
+      const [hours, minutes] = nightTimes[0].split(':');
+      firstTime.setHours(hours, minutes, 0, 0);
+      firstTime.setDate(now.getDate() + 1);
+      return firstTime;
+    }
+
+    function startCountdown() {
+      const countdownEl = document.getElementById("countdown");
+      let nextNightTime = getNextNightTime();
+
+      function updateCountdown() {
+        const now = new Date();
+        const diff = nextNightTime - now;
+
+        if (diff <= 0) {
+          nextNightTime = getNextNightTime(); // Pega o próximo ciclo
+        }
+
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        countdownEl.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      }
+
+      setInterval(updateCountdown, 1000);
+    }
+
+    // Dark/Light Mode
+    const toggleButton = document.getElementById("toggleMode");
+    const currentMode = localStorage.getItem("mode") || "light";
+    
+    document.body.classList.add(`${currentMode}-mode`);
+    toggleButton.textContent = currentMode === "light" ? "Ativar Modo Escuro" : "Ativar Modo Claro";
+    toggleButton.className = currentMode === "light" ? "light-btn" : "dark-btn";
+
+    toggleButton.addEventListener("click", () => {
+      const newMode = document.body.classList.contains("light-mode") ? "dark" : "light";
+      document.body.classList.toggle("light-mode");
+      document.body.classList.toggle("dark-mode");
+      localStorage.setItem("mode", newMode);
+      toggleButton.textContent = newMode === "light" ? "Ativar Modo Escuro" : "Ativar Modo Claro";
+      toggleButton.className = newMode === "light" ? "light-btn" : "dark-btn";
+    });
+
+    startCountdown();
+  </script>
+</body>
+</html>
