@@ -58,7 +58,7 @@ document.getElementById('enable-notifications').addEventListener('click', () => 
       const timeUntilNotification = notifyTime - now;
 
       setTimeout(() => {
-        new Notification('Boss Timer', { body: `Night Time começa em ${notificationMinutes} minutos!` });
+        new Notification('NIGHT TIME', { body: `Night Time começa em ${notificationMinutes} minutos!` });
       }, timeUntilNotification);
     }
   });
