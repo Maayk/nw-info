@@ -7,18 +7,33 @@ const nightTimes = [
 let notificationMinutes = 0;
 let nextNightTime = null;
 
+let cachedTime = null;
+let lastFetchTime = null;
+
 async function getCurrentTimeInSaoPaulo() {
+  const now = new Date();
+  
+  // Verifique se temos um tempo cacheado e se não passou de 60 segundos
+  if (cachedTime && lastFetchTime && (now - lastFetchTime < 60000)) {
+    return cachedTime; // Retorna o tempo cacheado
+  }
+  
   try {
     const response = await fetch('https://worldtimeapi.org/api/timezone/America/Sao_Paulo');
     if (!response.ok) throw new Error('Erro ao buscar a hora');
     const data = await response.json();
-    return new Date(data.datetime); // Retorna a hora oficial de São Paulo
+    cachedTime = new Date(data.datetime); // Armazena o tempo cacheado
+    lastFetchTime = now; // Armazena o tempo da última requisição
+    return cachedTime; // Retorna a hora oficial de São Paulo
   } catch (error) {
     console.error('Erro ao obter a hora de São Paulo:', error);
-    alert('Não foi possível obter a hora de São Paulo. Por favor, tente novamente mais tarde.');
-    return new Date(); // Retorna a hora local como fallback
+    // Como fallback, definindo a hora local como a hora de São Paulo
+    const offset = -3; // São Paulo está em UTC-3
+    const localDate = new Date();
+    return new Date(localDate.getTime() + (offset * 60 * 60 * 1000));
   }
 }
+
 
 async function getNextNightTime() {
   const now = await getCurrentTimeInSaoPaulo();
