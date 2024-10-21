@@ -3,9 +3,9 @@
       "tipo": "default",
       "map": "Vale das Lamentações",
       "attackingGuild": "New-Kaer",
-      "attackingIcon": "imgs/kaer.png",
+      "attackingIcon": "kaer.png",
       "defendingGuild": "TRUE YODISMO",
-      "defendingIcon": "imgs/yodismo.png",
+      "defendingIcon": "yodismo.png",
       "time": "2024-10-21T15:30"
     },
     {
