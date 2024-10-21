@@ -36,8 +36,19 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: #f4f4f9;
   color: #333;
-  transition: background-color 0.4s, color 0.4s;
 }
+
+  /* Chrome, Safari, Opera */
+  @-webkit-keyframes myfirst {
+    from {opacity: 0.2;}
+    to {opacity: 1;}
+  }
+
+  /* Standard syntax */
+  @keyframes myfirst {
+    from {opacity: 0.2;}
+    to {opacity: 1;}
+  }
 
 .dark-mode {
   background-color: #1c1c1c;
@@ -70,7 +81,7 @@ body {
 }
 
 nav {
-  background-color: #272829;
+  background-color: #272829d3;
   color: white;
   padding: 15px 20px;
   text-align: center;
@@ -295,8 +306,27 @@ footer {
   padding-right: 40px;
 }
 
-
 .TempoGuerra{
   font-size: 12px;
   margin-bottom: 10px;
+}
+
+.bottom-war{
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.bottom-war span{
+  margin-top: 20px;
+}
+
+.guild-icons{
+  position: relative;
+  margin-left: 90px;
+}
+
+.guild-icons img{
+  position: relative;
+  width: 35px;
 }
