@@ -248,6 +248,23 @@ footer {
   display: flex;
   justify-content: space-between;
 }
+.team-roxo{
+  color: rgb(168, 34, 168);
+  font-size: 10px;
+}
+.team-amarelo{
+  color: rgb(219, 216, 37);
+  font-size: 10px;
+}
+.team-verde{
+  color: rgb(18, 216, 51);
+  font-size: 10px;
+}
+
+.war-map-desc {
+  font-size: 14px;
+  color: rgb(255, 255, 255) !important;
+}
 
 .war-map {
   font-size: 14px;
