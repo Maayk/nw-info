@@ -96,8 +96,8 @@ async function fetchWars() {
       const hours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((timeDiff / (1000 * 60)) % 60);
 
-      const countdownText = timeDiff > 0 ? `Inicia em ${hours}h ${minutes}min` : 'A guerra já começou/acabou';
-      const CorridaText = timeDiff > 0 ? `Corrida em ${hours}h ${minutes}min` : 'Corrida ja começou';
+      const countdownText = timeDiff > 0 ? `Inicia em ${hours}h ${minutes}min` : 'A guerra já começou/terminou';
+      const CorridaText = timeDiff > 0 ? `Corrida em ${hours}h ${minutes}min` : 'Corrida ja começou/terminou';
       console.log(war.tipo);
       
       if (war.tipo === "default"){
@@ -109,10 +109,18 @@ async function fetchWars() {
 
         <div class="war-details">
           <span class="TempoGuerra">${countdownText}</span>
+          
           <span class="war-time">${warTime}</span>
         </div>
         
-        <span class="war-map">${war.map}</span><b>
+        <div class="bottom-war">
+          <span class="war-map">${war.map}</span><b>
+          <div class="guild-icons">
+             <img src="${war.attackingIcon}"></img>
+             <img src="${war.defendingIcon}"></img>
+          </div>
+        </div>
+        
       `;
 
       warsList.appendChild(warItem);
