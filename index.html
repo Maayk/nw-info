@@ -3,27 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New World Night Timer</title>
+  <title>New World Info - Alkaid Server</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <nav>
     <ul>
-      <li><a href="#">Night Time</a></li>
-<!--       <li><a href="#">Notificações</a></li>
-      <li><a href="#">Histórico</a></li>
-      <li><a href="#">Configurações</a></li> -->
+      <li>New World Info - Alkaid</li>
     </ul>
   </nav>
 
   <div class="container">
-    <h1>NW NIGHT TIME</h1>
-
-    <div class="countdown" id="countdown">Carregando...</div>
     <div class="advert">
       <span>Aviso!</span>
-      Para garantir maior precisão no horário, verifique se o seu navegador/computador está configurado para o Horário Oficial de São Paulo/Brasília.
+      Para que o horário seja mais preciso, certifique-se de estar no Horário Oficial de São Paulo/Brasília.
     </div>
+
+    <!-- Seção Nighttime -->
+    <div class="section">
+      <h2>Próximo Nighttime</h2>
+      <div class="countdown" id="countdown">Carregando...</div>
+      <div class="history">
+        <h3>Histórico de Night Time</h3>
+        <ul id="history-list">
+        </ul>
+      </div>
+    </div>
+
+    <!-- Seção Guerras -->
+    <div class="section">
+      <h2 class="warsh2">Guerras de Hoje</h2>
+      <div id="wars-list" class="wars-container"></div>
+    </div>
+  </div>
+
+  <div class="container">
     <div class="settings">
       <div>
         <label for="notification-time">Notificação:</label>
@@ -36,13 +50,6 @@
       <div>
         <button id="enable-notifications">Ativar Notificações</button>
       </div>
-    </div>
-
-    <div class="history">
-      <h3>Histórico de Night Time</h3>
-      <ul id="history-list">
-        
-      </ul>
     </div>
 
     <div class="mode-toggle">
