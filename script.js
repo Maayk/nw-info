@@ -98,7 +98,6 @@ async function fetchWars() {
 
       const countdownText = timeDiff > 0 ? `Inicia em ${hours}h ${minutes}min` : 'A guerra já começou/terminou';
       const CorridaText = timeDiff > 0 ? `Corrida em ${hours}h ${minutes}min` : 'Corrida ja começou/terminou';
-      console.log(war.tipo);
       
       if (war.tipo === "default"){
 
