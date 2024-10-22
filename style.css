@@ -274,6 +274,9 @@ footer {
 
 .war-map-desc {
   font-size: 14px;
+  color: rgb(75, 74, 74) !important;
+}
+.dark-mode .war-map-desc{
   color: rgb(255, 255, 255) !important;
 }
 
