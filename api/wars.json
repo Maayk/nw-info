@@ -3,18 +3,18 @@
       "tipo": "default",
       "map": "Águas Fétidas",
       "attackingGuild": "SafeZone SFZ",
-      "attackingIcon": "safezone.png",
+      "attackingIcon": "guilds/safezone.png",
       "defendingGuild": "War Brothers Company",
-      "defendingIcon": "warbrothers.png",
+      "defendingIcon": "guilds/warbrothers.png",
       "time": "2024-10-22T21:00"
     },
     {
       "tipo": "default",
       "map": "Ilhéus do Sabre",
       "attackingGuild": "SafeZone SFZ",
-      "attackingIcon": "safezone.png",
+      "attackingIcon": "guilds/safezone.png",
       "defendingGuild": "Ø EGO Ø",
-      "defendingIcon": "ego.png",
+      "defendingIcon": "guilds/ego.png",
       "time": "2024-10-22T23:00"
     },
     {
