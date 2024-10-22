@@ -16,6 +16,30 @@
       "defendingGuild": "Ø EGO Ø",
       "defendingIcon": "ego.png",
       "time": "2024-10-22T23:00"
+    },
+    {
+        "tipo": "corrida",
+        "map": "Queda Eterna",
+        "mapOwner": "Ø EGO Ø",
+        "mapcolor":"team-amarelo",
+        "colorfield": "AMARELO",
+        "time": "2024-10-22T19:00"
+    },
+    {
+        "tipo": "corrida",
+        "map": "Areias do Enxofre",
+        "mapOwner": "War Brothers Company",
+        "mapcolor":"team-amarelo",
+        "colorfield": "AMARELO",
+        "time": "2024-10-22T20:00"
+    },
+    {
+        "tipo": "corrida",
+        "map": "Bosque do Éden",
+        "mapOwner": "IGNITE",
+        "mapcolor":"team-roxo",
+        "colorfield": "ROXO",
+        "time": "2024-10-22T21:00"
     }
 
-  ]
+]
