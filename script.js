@@ -144,7 +144,7 @@ startCountdown();
 
 async function fetchWars() {
   try {
-    const response = await fetch('wars.json');
+    const response = await fetch('api/wars.json');
     const wars = await response.json();
     const warsList = document.getElementById('wars-list');
     warsList.innerHTML = '';
