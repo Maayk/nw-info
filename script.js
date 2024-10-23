@@ -1,37 +1,31 @@
 const currentNightTime = "14:23"; // Hora atual do night time
 const intervalMinutes = 90; // Intervalo entre os ciclos em minutos
 
-// Função para gerar a lista de horários
 function generateNightTimes(currentNightTime) {
   const nightTimes = [];
   const [currentHours, currentMinutes] = currentNightTime.split(':').map(Number);
   const currentDate = new Date();
   
-  // Adicionando horários anteriores
-  for (let i = 0; i < 8; i++) { // 8 ciclos anteriores
+  for (let i = 0; i < 8; i++) { 
     const pastTime = new Date(currentDate.getTime());
     pastTime.setHours(currentHours);
     pastTime.setMinutes(currentMinutes - (intervalMinutes * (8 - i)));
-    nightTimes.unshift(pastTime.toTimeString().slice(0, 5)); // Formato "HH:MM"
+    nightTimes.unshift(pastTime.toTimeString().slice(0, 5)); 
   }
 
-  // Adicionando o horário atual
   nightTimes.push(currentNightTime);
 
-  // Adicionando horários futuros
-  for (let i = 1; i <= 7; i++) { // 7 ciclos futuros
+  for (let i = 1; i <= 7; i++) {
     const futureTime = new Date(currentDate.getTime());
     futureTime.setHours(currentHours);
     futureTime.setMinutes(currentMinutes + (intervalMinutes * i));
-    nightTimes.push(futureTime.toTimeString().slice(0, 5)); // Formato "HH:MM"
+    nightTimes.push(futureTime.toTimeString().slice(0, 5));
   }
 
-  return nightTimes.sort(); // Ordena os horários em ordem crescente
+  return nightTimes.sort();
 }
 
-// Gerando os horários baseados no currentNightTime
 const nightTimes = generateNightTimes(currentNightTime);
-
 let nextNightTime = getNextNightTime();
 
 function getNextNightTime() {
@@ -43,7 +37,6 @@ function getNextNightTime() {
     if (nextTime > now) return nextTime;
   }
 
-  // Se não houver horários futuros, retorna o primeiro horário do próximo dia
   const firstTime = new Date();
   firstTime.setDate(now.getDate() + 1);
   const [hours, minutes] = nightTimes[0].split(':');
@@ -53,7 +46,7 @@ function getNextNightTime() {
 
 function startCountdown() {
   const countdownEl = document.getElementById('countdown');
-  const dayNightMessageEl = document.getElementById('day-night-message'); // A nova div para a mensagem
+  const dayNightMessageEl = document.getElementById('day-night-message');
   setInterval(() => {
     const now = new Date();
     const diff = nextNightTime - now;
@@ -62,21 +55,21 @@ function startCountdown() {
       nextNightTime = getNextNightTime();
     }
 
-    // Verifica em qual parte do ciclo estamos
-    const nightDuration = 30 * 60 * 1000; // 30 minutos em milissegundos
-    const totalDuration = 1.5 * 60 * 60 * 1000; // 1h30 em milissegundos
-    const timeSinceNightStarted = now - nextNightTime + totalDuration; // Tempo desde que começou a noite
+
+    const nightDuration = 30 * 60 * 1000;
+    const totalDuration = 1.5 * 60 * 60 * 1000;
+    const timeSinceNightStarted = now - nextNightTime + totalDuration;
 
     let displayText = '';
     let remainingTime = diff;
 
-    // Ajusta o tempo restante dependendo se está de noite ou de dia
+
     if (timeSinceNightStarted < nightDuration) {
-      // Se ainda estamos nas primeiras 30 minutos
+
       remainingTime = nightDuration - timeSinceNightStarted;
       displayText = 'Está de noite - Noite termina em';
     } else if (timeSinceNightStarted < totalDuration) {
-      // Se estamos na segunda parte do ciclo
+
       remainingTime = totalDuration - timeSinceNightStarted;
       displayText = 'Está de dia - Dia termina em:';
     }
@@ -85,7 +78,7 @@ function startCountdown() {
     const minutes = Math.floor((remainingTime / (1000 * 60)) % 60);
     const seconds = Math.floor((remainingTime / 1000) % 60);
     countdownEl.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-    dayNightMessageEl.textContent = displayText; // Atualiza a mensagem na div
+    dayNightMessageEl.textContent = displayText;
 
     updateNightTimesDisplay(now);
   }, 1000);
@@ -93,19 +86,19 @@ function startCountdown() {
 
 function updateNightTimesDisplay(now) {
   const nightTimesList = document.getElementById('night-times-list');
-  nightTimesList.innerHTML = ''; // Limpa a lista antes de atualizar
+  nightTimesList.innerHTML = '';
 
   nightTimes.forEach(time => {
     const li = document.createElement('li');
     li.textContent = time;
 
-    // Adiciona um símbolo de verificação para horários que já passaram
+
     const [hours, minutes] = time.split(':');
     const nightTimeDate = new Date();
     nightTimeDate.setHours(hours, minutes, 0, 0);
     
     if (nightTimeDate < now) {
-      li.textContent += ' ✔️'; // Adiciona o símbolo de check
+      li.textContent += ' ✔️';
     }
 
     nightTimesList.appendChild(li);
@@ -127,7 +120,7 @@ document.getElementById('enable-notifications').addEventListener('click', () => 
   });
 });
 
-const currentMode = localStorage.getItem('mode') || 'dark'; // Define o modo escuro como padrão
+const currentMode = localStorage.getItem('mode') || 'dark';
 document.body.classList.add(`${currentMode}-mode`);
 const toggleButton = document.getElementById('toggleMode');
 toggleButton.textContent = currentMode === 'light' ? 'Ativar Modo Escuro' : 'Ativar Modo Claro';
