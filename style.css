@@ -333,3 +333,58 @@ footer {
   position: relative;
   width: 35px;
 }
+
+.guild-discord span {
+  display: block;
+  margin-top: 10px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #1abc9c;
+}
+/* asdasd? */
+
+.guild-discord span {
+  display: block;
+  margin-top: 10px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #1abc9c;
+}
+
+#day-night-message{
+  text-align: center;
+}
