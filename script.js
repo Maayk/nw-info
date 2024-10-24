@@ -1,4 +1,4 @@
-const currentNightTime = "14:23"; // Hora atual do night time
+const currentNightTime = "04:32"; // Hora atual do night time
 const intervalMinutes = 90; // Intervalo entre os ciclos em minutos
 
 function generateNightTimes(currentNightTime) {
