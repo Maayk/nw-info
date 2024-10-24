@@ -1,27 +1,43 @@
 [
     {
       "tipo": "default",
-      "map": "Areias do Enxofre",
-      "attackingGuild": "VITALITY",
-      "attackingIcon": "guilds/vitality.png",
-      "defendingGuild": "War Brothers Company",
-      "defendingIcon": "guilds/warbrothers.png",
-      "time": "2024-10-23T21:00"
+      "map": "Vale das Lamentações",
+      "attackingGuild": "TRUE YODISMO",
+      "attackingIcon": "guilds/yodismo.png",
+      "defendingGuild": "New-Kaer",
+      "defendingIcon": "guilds/kaer.png",
+      "time": "2024-10-24T22:00"
     },
     {
         "tipo": "corrida",
-        "map": "Guarda Ventos",
+        "map": "Bosque Reluzente",
         "mapOwner": "IGNITE",
         "mapcolor":"team-roxo",
         "colorfield": "ROXO",
-        "time": "2024-10-23T19:00"
+        "time": "2024-10-24T19:00"
     },
     {
         "tipo": "corrida",
-        "map": "Vale das Lamentações",
-        "mapOwner": "New-Kaer",
+        "map": "Ilheus do Sabre",
+        "mapOwner": "Ø EGO Ø",
+        "mapcolor":"team-amarelo",
+        "colorfield": "AMARELO",
+        "time": "2024-10-24T20:00"
+    },
+    {
+        "tipo": "corrida",
+        "map": "Falésias do Monarca",
+        "mapOwner": "SafeZone SFZ",
         "mapcolor":"team-roxo",
         "colorfield": "ROXO",
-        "time": "2024-10-23T20:00"
-    }
+        "time": "2024-10-24T21:00"
+    },
+    {
+        "tipo": "corrida",
+        "map": "Águas Fétidas",
+        "mapOwner": "War Brothers Company",
+        "mapcolor":"team-amarelo",
+        "colorfield": "AMARELO",
+        "time": "2024-10-24T22:00"
+    },
 ]
