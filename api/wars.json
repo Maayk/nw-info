@@ -1,43 +1,35 @@
 [
     {
       "tipo": "default",
-      "map": "Vale das Lamentações",
-      "attackingGuild": "TRUE YODISMO",
-      "attackingIcon": "guilds/yodismo.png",
-      "defendingGuild": "New-Kaer",
-      "defendingIcon": "guilds/kaer.png",
-      "time": "2024-10-24T22:00"
+      "map": "Ilhéus do Sabre",
+      "attackingGuild": "RESIL",
+      "attackingIcon": "guilds/resil.png",
+      "defendingGuild": "Ø EGO Ø",
+      "defendingIcon": "guilds/ego.png",
+      "time": "2024-10-25T23:00"
     },
     {
         "tipo": "corrida",
-        "map": "Bosque Reluzente",
+        "map": "Bosque do Éden",
         "mapOwner": "IGNITE",
         "mapcolor":"team-roxo",
         "colorfield": "ROXO",
-        "time": "2024-10-24T19:00"
+        "time": "2024-10-25T19:00"
     },
     {
         "tipo": "corrida",
-        "map": "Ilheus do Sabre",
-        "mapOwner": "Ø EGO Ø",
-        "mapcolor":"team-amarelo",
-        "colorfield": "AMARELO",
-        "time": "2024-10-24T20:00"
-    },
-    {
-        "tipo": "corrida",
-        "map": "Falésias do Monarca",
-        "mapOwner": "SafeZone SFZ",
-        "mapcolor":"team-roxo",
-        "colorfield": "ROXO",
-        "time": "2024-10-24T21:00"
-    },
-    {
-        "tipo": "corrida",
-        "map": "Águas Fétidas",
+        "map": "Areias do Enxofre",
         "mapOwner": "War Brothers Company",
         "mapcolor":"team-amarelo",
         "colorfield": "AMARELO",
-        "time": "2024-10-24T22:00"
-    }
+        "time": "2024-10-25T20:00"
+    },
+    {
+        "tipo": "corrida",
+        "map": "Queda Eterna",
+        "mapOwner": "Ø EGO Ø",
+        "mapcolor":"team-amarelo",
+        "colorfield": "AMARELO",
+        "time": "2024-10-25T21:00"
+    },
 ]
