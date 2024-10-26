@@ -1,35 +1,52 @@
 [
     {
       "tipo": "default",
-      "map": "Ilhéus do Sabre",
-      "attackingGuild": "RESIL",
-      "attackingIcon": "guilds/resil.png",
+      "map": "Areias do Enxofre",
+      "attackingGuild": "Nao Quero Guild",
+      "attackingIcon": "guilds/nqg.png",
+      "defendingGuild": "War Brothers Company",
+      "defendingIcon": "guilds/warbrothers.png",
+      "time": "2024-10-26T21:00"
+    },
+    {
+      "tipo": "default",
+      "map": "Queda Eterna",
+      "attackingGuild": "IGNITE",
+      "attackingIcon": "guilds/ignite.png",
       "defendingGuild": "Ø EGO Ø",
       "defendingIcon": "guilds/ego.png",
-      "time": "2024-10-25T23:00"
+      "time": "2024-10-26T23:00"
     },
     {
         "tipo": "corrida",
-        "map": "Bosque do Éden",
+        "map": "Vale das Lamentações",
+        "mapOwner": "New-Kaer",
+        "mapcolor":"team-roxo",
+        "colorfield": "ROXO",
+        "time": "2024-10-26T19:00"
+    },
+    {
+        "tipo": "corrida",
+        "map": "Crosta do Ébano",
+        "mapOwner": "Correio",
+        "mapcolor":"team-roxo",
+        "colorfield": "ROXO",
+        "time": "2024-10-26T20:00"
+    },
+    {
+        "tipo": "corrida",
+        "map": "Pântano do Tecelão",
+        "mapOwner": "JHOOLNA TTV",
+        "mapcolor":"team-roxo",
+        "colorfield": "ROXO",
+        "time": "2024-10-26T21:00"
+    },
+    {
+        "tipo": "corrida",
+        "map": "Guarda Ventos",
         "mapOwner": "IGNITE",
         "mapcolor":"team-roxo",
         "colorfield": "ROXO",
-        "time": "2024-10-25T19:00"
-    },
-    {
-        "tipo": "corrida",
-        "map": "Areias do Enxofre",
-        "mapOwner": "War Brothers Company",
-        "mapcolor":"team-amarelo",
-        "colorfield": "AMARELO",
-        "time": "2024-10-25T20:00"
-    },
-    {
-        "tipo": "corrida",
-        "map": "Queda Eterna",
-        "mapOwner": "Ø EGO Ø",
-        "mapcolor":"team-amarelo",
-        "colorfield": "AMARELO",
-        "time": "2024-10-25T21:00"
+        "time": "2024-10-26T22:00"
     }
 ]
