@@ -1,52 +1,43 @@
 [
     {
       "tipo": "default",
-      "map": "Areias do Enxofre",
-      "attackingGuild": "Nao Quero Guild",
-      "attackingIcon": "guilds/nqg.png",
-      "defendingGuild": "War Brothers Company",
-      "defendingIcon": "guilds/warbrothers.png",
-      "time": "2024-10-26T21:00"
-    },
-    {
-      "tipo": "default",
-      "map": "Queda Eterna",
-      "attackingGuild": "IGNITE",
-      "attackingIcon": "guilds/ignite.png",
-      "defendingGuild": "Ø EGO Ø",
-      "defendingIcon": "guilds/ego.png",
-      "time": "2024-10-26T23:00"
+      "map": "Crosta do Ébano",
+      "attackingGuild": "A CLAVE",
+      "attackingIcon": "guilds/clave.png",
+      "defendingGuild": "Correio",
+      "defendingIcon": "guilds/correio.png",
+      "time": "2024-10-27T19:00"
     },
     {
         "tipo": "corrida",
-        "map": "Vale das Lamentações",
-        "mapOwner": "New-Kaer",
-        "mapcolor":"team-roxo",
-        "colorfield": "ROXO",
-        "time": "2024-10-26T19:00"
+        "map": "Águas Fétidas",
+        "mapOwner": "War Brothers Company",
+        "mapcolor":"team-amarelo",
+        "colorfield": "AMARELO",
+        "time": "2024-10-27T20:00"
     },
     {
         "tipo": "corrida",
-        "map": "Crosta do Ébano",
-        "mapOwner": "Correio",
-        "mapcolor":"team-roxo",
-        "colorfield": "ROXO",
-        "time": "2024-10-26T20:00"
+        "map": "Ilhéus do Sabre",
+        "mapOwner": "RESIL",
+        "mapcolor":"team-verde",
+        "colorfield": "VERDE",
+        "time": "2024-10-27T21:00"
     },
     {
         "tipo": "corrida",
-        "map": "Pântano do Tecelão",
-        "mapOwner": "JHOOLNA TTV",
-        "mapcolor":"team-roxo",
-        "colorfield": "ROXO",
-        "time": "2024-10-26T21:00"
-    },
-    {
-        "tipo": "corrida",
-        "map": "Guarda Ventos",
+        "map": "Bosque Reluzente",
         "mapOwner": "IGNITE",
         "mapcolor":"team-roxo",
         "colorfield": "ROXO",
-        "time": "2024-10-26T22:00"
+        "time": "2024-10-27T22:00"
+    },
+    {
+        "tipo": "corrida",
+        "map": "Falésias do Monarca",
+        "mapOwner": "SafeZone SFZ",
+        "mapcolor":"team-roxo",
+        "colorfield": "ROXO",
+        "time": "2024-10-27T23:00"
     }
 ]
