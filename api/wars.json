@@ -2,11 +2,20 @@
     {
       "tipo": "default",
       "map": "Crosta do Ébano",
-      "attackingGuild": "A CLAVE",
-      "attackingIcon": "guilds/clave.png",
-      "defendingGuild": "Correio",
-      "defendingIcon": "guilds/correio.png",
-      "time": "2024-10-27T19:00"
+      "attackingGuild": "SafeZone SFZ",
+      "attackingIcon": "guilds/safezone.png",
+      "defendingGuild": "A CLAVE",
+      "defendingIcon": "guilds/clave.png",
+      "time": "2024-10-30T22:00"
+    },
+    {
+      "tipo": "default",
+      "map": "Vale das Lamentações",
+      "attackingGuild": "TRUE YODISMO",
+      "attackingIcon": "guilds/yodismo.png",
+      "defendingGuild": "New-Kaer",
+      "defendingIcon": "guilds/kaer.png",
+      "time": "2024-10-30T22:00"
     },
     {
         "tipo": "corrida",
@@ -14,23 +23,7 @@
         "mapOwner": "War Brothers Company",
         "mapcolor":"team-amarelo",
         "colorfield": "AMARELO",
-        "time": "2024-10-27T20:00"
-    },
-    {
-        "tipo": "corrida",
-        "map": "Ilhéus do Sabre",
-        "mapOwner": "RESIL",
-        "mapcolor":"team-verde",
-        "colorfield": "VERDE",
-        "time": "2024-10-27T21:00"
-    },
-    {
-        "tipo": "corrida",
-        "map": "Bosque Reluzente",
-        "mapOwner": "IGNITE",
-        "mapcolor":"team-roxo",
-        "colorfield": "ROXO",
-        "time": "2024-10-27T22:00"
+        "time": "2024-10-30T20:00"
     },
     {
         "tipo": "corrida",
@@ -38,6 +31,22 @@
         "mapOwner": "SafeZone SFZ",
         "mapcolor":"team-roxo",
         "colorfield": "ROXO",
-        "time": "2024-10-27T23:00"
+        "time": "2024-10-30T21:00"
+    },
+    {
+        "tipo": "corrida",
+        "map": "Ilhéus do Sabre",
+        "mapOwner": "Ø EGO Ø",
+        "mapcolor":"team-amarelo",
+        "colorfield": "AMARELO",
+        "time": "2024-10-30T22:00"
+    },
+    {
+        "tipo": "corrida",
+        "map": "Bosque Reluzente",
+        "mapOwner": "IGNITE",
+        "mapcolor":"team-roxo",
+        "colorfield": "ROXO",
+        "time": "2024-10-30T23:00"
     }
 ]
