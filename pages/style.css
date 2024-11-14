@@ -60,7 +60,7 @@ body {
     height: 36px;
     cursor: move;
     text-align: center;
-    line-height: normal;
+    line-height: 35px;
     background-color: transparent !important;
 }
 
