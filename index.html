@@ -1,63 +1,135 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
+<html lang="pt-br" class=""> <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>New World Info - Alkaid Server</title>
-  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class', // Importante para o toggle via JS
+      theme: {
+        extend: {
+          colors: {
+            // Cores personalizadas se necessário (ex: cores específicas do New World)
+            'nw-purple': {
+              light: '#a855f7', // purple-500
+              DEFAULT: '#7e22ce', // purple-700
+              dark: '#581c87'   // purple-900
+            },
+            'nw-yellow': {
+              light: '#facc15', // yellow-400
+              DEFAULT: '#eab308', // yellow-500
+              dark: '#ca8a04'   // yellow-600
+            },
+            'nw-green': {
+              light: '#4ade80', // green-400
+              DEFAULT: '#22c55e', // green-500
+              dark: '#16a34a'   // green-600
+            },
+            'nw-gold': '#FFD700', // Cor para mapas ou destaques
+            'night-blue': '#3b82f6', // blue-500
+            'day-orange': '#f97316', // orange-500
+          },
+          fontFamily: {
+            // Se quiser usar Roboto ou outra fonte específica:
+            // sans: ['Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Estilos globais mínimos ou para elementos não facilmente gerenciados por Tailwind */
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    /* Estilo para a barra de rolagem da lista de horários (opcional) */
+    #night-times-list::-webkit-scrollbar {
+      width: 8px;
+    }
+    #night-times-list::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    #night-times-list::-webkit-scrollbar-thumb {
+      background-color: #4b5563; /* gray-600 */
+      border-radius: 4px;
+    }
+    .dark #night-times-list::-webkit-scrollbar-thumb {
+      background-color: #6b7280; /* gray-500 */
+    }
+
+    /* Adaptação para as cores das facções caso não queira mudar no JS imediatamente */
+    /* Idealmente, o JS geraria as classes Tailwind corretas */
+    .team-amarelo { color: #eab308; /* Tailwind yellow-500 */ }
+    .team-roxo { color: #7e22ce; /* Tailwind purple-700 */ }
+    .team-verde { color: #22c55e; /* Tailwind green-500 */ }
+    .dark .team-amarelo { color: #facc15; /* Tailwind yellow-400 */ }
+    .dark .team-roxo { color: #a855f7; /* Tailwind purple-500 */ }
+    .dark .team-verde { color: #4ade80; /* Tailwind green-400 */ }
+
+  </style>
 </head>
-<body>
-  <nav>
-    <ul>
-      <li>New World Info - Alkaid</li>
-    </ul>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-sans transition-colors duration-300">
+
+  <nav class="bg-slate-800 dark:bg-slate-950 text-white shadow-lg">
+    <div class="container mx-auto px-6 py-3">
+      <h1 class="text-xl font-semibold">New World Info - Alkaid</h1>
+    </div>
   </nav>
 
-  <div class="container">
-    <div class="advert">
-      <span>Aviso!</span>
-      Para que o horário seja mais preciso, certifique-se de estar no Horário Oficial de São Paulo/Brasília.
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <div class="advert bg-yellow-100 dark:bg-yellow-800 border-l-4 border-yellow-500 dark:border-yellow-400 text-yellow-700 dark:text-yellow-200 p-4 my-6 rounded-md shadow">
+      <span class="font-bold">Aviso!</span> Para que o horário seja mais preciso, certifique-se de estar no Horário Oficial de São Paulo/Brasília.
     </div>
 
-    <!-- Seção Nighttime -->
-    <div class="section">
-      <div id="day-night-message"></div>
-      <div class="countdown" id="countdown"></div>
-      <div class="history">
-        <ul id="night-times-list"></ul>
-        </ul>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+
+      <section class="lg:col-span-1 bg-white dark:bg-slate-800 p-6 rounded-xl shadow-2xl">
+        <div id="day-night-message" class="text-center text-lg font-medium mb-3 text-gray-700 dark:text-gray-300">Calculando...</div>
+        <div class="countdown text-6xl font-bold text-center my-4 text-night-blue dark:text-day-orange" id="countdown">00:00:00</div>
+        <div class="history mt-6 bg-gray-50 dark:bg-slate-700 p-4 rounded-lg max-h-60 overflow-y-auto" id="history-list-container">
+          <ul id="night-times-list" class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+            </ul>
+        </div>
+      </section>
+
+      <section class="lg:col-span-2 bg-white dark:bg-slate-800 p-6 rounded-xl shadow-2xl">
+        <h2 class="text-2xl font-semibold mb-6 text-center text-gray-800 dark:text-gray-100">Guerras e Corridas de Hoje</h2>
+        <div id="wars-list" class="wars-container space-y-4">
+          </div>
+      </section>
+    </div>
+
+    <section class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-2xl mt-6 lg:mt-8">
+      <h2 class="text-xl font-semibold mb-4 text-center text-gray-800 dark:text-gray-100">Configurações</h2>
+      <div class="settings flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+        <div class="flex items-center space-x-2">
+          <label for="notification-time" class="text-sm font-medium text-gray-700 dark:text-gray-300">Notificar:</label>
+          <select id="notification-time" class="bg-white dark:bg-slate-700 border border-gray-300 dark:border-slate-600 rounded-md py-2 px-3 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150">
+            <option value="0">No momento</option>
+            <option value="5">5 minutos antes</option>
+            <option value="10">10 minutos antes</option>
+          </select>
+        </div>
+        <div>
+          <button id="enable-notifications" class="bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-lg transition-all duration-150 text-sm">
+            Ativar Notificações
+          </button>
+        </div>
+        <div>
+          <button id="toggleMode" class="bg-slate-600 hover:bg-slate-700 dark:bg-gray-600 dark:hover:bg-gray-700 text-white font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-lg transition-all duration-150 text-sm">
+            Ativar Modo Escuro/Claro
+          </button>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Seção Guerras -->
-    <div class="section">
-      <h2 class="warsh2">Guerras / Corridas de Hoje</h2>
-      <div id="wars-list" class="wars-container"></div>
-    </div>
   </div>
 
-  <div class="container">
-    <div class="settings">
-      <div>
-        <label for="notification-time">Notificação:</label>
-        <select id="notification-time">
-          <option value="0">No momento</option>
-          <option value="5">5 minutos antes</option>
-          <option value="10">10 minutos antes</option>
-        </select>
-      </div>
-      <div>
-        <button id="enable-notifications">Ativar Notificações</button>
-      </div>
-    </div>
-
-    <div class="mode-toggle">
-      <button id="toggleMode">Ativar Modo Escuro</button>
-    </div>
-  </div>
-
-  <footer>
-    © 2024 - NW Night time - Mayk
+  <footer class="text-center py-8 mt-8">
+    <p class="text-sm text-gray-500 dark:text-gray-400">© 2024 - NW Night time - Mayk</p>
   </footer>
 
   <script src="script.js"></script>
